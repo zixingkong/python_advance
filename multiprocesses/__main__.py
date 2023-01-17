@@ -1,14 +1,23 @@
+# -*- coding: utf-8 -*-
+"""
+-------------------------------------------------
+多进程的定义和使用
+
+-------------------------------------------------
+"""
+
+
 import multiprocessing
 import time
 
 
 def task(name: str, count: int):
-    print(f"{name} - start\n", end='')
+    print(f"{name} - start\n", end="")
     result = 0
     for n in range(count):
         result += n + 1
     time.sleep(1)
-    print(f"{name} - end with {result}")
+    print(f"{name} - end with {result}\n", end="")
 
 
 def start_process_1():
@@ -23,7 +32,10 @@ def start_process_1():
 
 def start_process_2():
     args_list = [("A", 100), ("B", 99), ("C", 98)]
-    processes = [multiprocessing.Process(target=task, args=[name, count]) for name, count in args_list]
+    processes = [
+        multiprocessing.Process(target=task, args=[name, count])
+        for name, count in args_list
+    ]
 
     for p in processes:
         p.start()

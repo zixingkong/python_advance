@@ -1,5 +1,13 @@
+# -*- coding: utf-8 -*-
+"""
+-------------------------------------------------
+元类的定义和使用
+
+-------------------------------------------------
+"""
+
+
 class Human(type):
-    @staticmethod
     def __new__(mcs, *args, **kwargs):
         class_ = super().__new__(mcs, *args)
         # class_.freedom = True
