@@ -1,3 +1,11 @@
+# -*- coding: utf-8 -*-
+"""
+-------------------------------------------------
+dataclass数据装饰类
+
+-------------------------------------------------
+"""
+
 import operator
 from dataclasses import dataclass, field
 

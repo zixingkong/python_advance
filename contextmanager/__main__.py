@@ -1,3 +1,11 @@
+# -*- coding: utf-8 -*-
+"""
+-------------------------------------------------
+上下文管理器
+
+-------------------------------------------------
+"""
+
 # instance = open("mydata.txt", "w")
 # instance.write("Hello this is a test file")
 # instance.close()
@@ -27,8 +35,6 @@ class Timer:
 with Timer() as timer:
     nums = []
     for n in range(10000):
-        nums.append(n ** 2)
+        nums.append(n**2)
 
 print(timer.elapsed)
-
-

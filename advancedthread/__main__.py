@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+-------------------------------------------------
+线程进阶：生产者消费者模式
+
+-------------------------------------------------
+"""
 import time
 from threading import Thread
 from queue import Queue
@@ -13,7 +20,7 @@ class MyThread(Thread):
 
     def run(self) -> None:
         for n in range(self.count):
-            print(f"{self.getName()} - {n}\n", end='')
+            print(f"{self.getName()} - {n}\n", end="")
             time.sleep(0.01)
 
 
@@ -51,7 +58,7 @@ class MsgConsumer(Thread):
     def run(self) -> None:
         while True:
             msg = self.queue.get(block=True)
-            print(f"{self.getName()} - {msg}\n", end='')
+            print(f"{self.getName()} - {msg}\n", end="")
 
 
 queue = Queue(3)
@@ -65,5 +72,3 @@ threads.append(MsgConsumer("CB", queue))
 
 for t in threads:
     t.start()
-
-

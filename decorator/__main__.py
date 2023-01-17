@@ -10,6 +10,7 @@ from functools import wraps
 #
 #     return wrapper
 
+
 def welcome(name):
     def decorator(fn):
         @wraps(fn)
@@ -19,9 +20,11 @@ def welcome(name):
             return result
 
         return wrapper
+
     return decorator
 
 
+# my_fun = welcome("Tom")(my_fun)
 @welcome("Tom")
 def my_fun(message: str):
     print(f"Hello {message}")

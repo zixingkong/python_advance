@@ -1,3 +1,13 @@
+# -*- coding: utf-8 -*-
+"""
+-------------------------------------------------
+协程返回
+取消协程
+超时时保证协程完成任务
+
+-------------------------------------------------
+"""
+
 import asyncio
 from asyncio.exceptions import TimeoutError
 
@@ -49,9 +59,11 @@ async def my_gather():
 
 
 async def my_gather_with_exception():
-    results = await asyncio.gather(play_music("A"), play_music("B"), call_api(),
-                                   return_exceptions=True)
+    results = await asyncio.gather(
+        play_music("A"), play_music("B"), call_api(), return_exceptions=True
+    )
     print(results)
+
 
 if __name__ == "__main__":
     asyncio.run(my_gather_with_exception())
