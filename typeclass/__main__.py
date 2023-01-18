@@ -1,3 +1,11 @@
+# -*- coding: utf-8 -*-
+"""
+-------------------------------------------------
+元类: type
+
+-------------------------------------------------
+"""
+
 class Student:
     def greeting(self):
         print("Hello student")
@@ -16,6 +24,7 @@ def jump(self):
 """
 class_dict = {}
 exec(class_body, globals(), class_dict)
+print(class_dict)
 
 Customer = type("Customer", (object,), class_dict)
 

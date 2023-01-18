@@ -1,3 +1,12 @@
+# -*- coding: utf-8 -*-
+"""
+-------------------------------------------------
+变量的作用域：builtin -> module -> local
+
+-------------------------------------------------
+"""
+
+
 count = 10
 
 print(count)
@@ -14,4 +23,3 @@ def greeting(flag: bool):
 greeting(True)
 
 print(count)
-
